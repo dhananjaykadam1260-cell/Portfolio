@@ -30,11 +30,32 @@ const DATA = {
 
   projects: [
     {
-      title: "E-Commerce Backend API",
-      desc: "Designed and developed RESTful APIs for products, cart, and order management implementing input validation, layered architecture (Controller–Service–Repository), centralized exception handling, JWT-based security, role-based access control, pagination, sorting, DTO pattern, and MySQL database integration using Spring Boot, Hibernate, and JPA.",
-      stack: ["Spring Boot", "MySQL", "JWT"],
-      links: { code: "https://github.com/dhananjaykadam1260-cell" },
-      icon: "🛒",
+      title: "WorkNest - Job Portal",
+      desc: "A job portal platform built with Spring Boot, Thymeleaf, and MySQL, featuring separate candidate and recruiter registration/login flows with session-based authentication, layered architecture (Controller–Service–Repository), and JPA-backed data persistence.",
+      stack: ["Spring Boot", "Thymeleaf", "MySQL"],
+      links: { code: "https://github.com/dhananjaykadam1260-cell/workNest---job-portal-Projet.git" },
+      icon: "💼",
+    },
+    {
+      title: "VitaVest",
+      desc: "A wellness platform for mood check-ins, journaling, and goal tracking, with user authentication, subscription plans, and an admin panel. Built with Spring Boot and Thymeleaf, backed by a MySQL database.",
+      stack: ["Spring Boot", "Thymeleaf", "MySQL"],
+      links: { code: "https://github.com/dhananjaykadam1260-cell/VitaVest.git" },
+      icon: "🌱",
+    },
+    {
+      title: "Daily Expense Tracker",
+      desc: "A web application for logging and tracking daily expenses, with category-wise breakdowns and CRUD operations for adding, editing, and reviewing spending records.",
+      stack: ["Spring Boot", "MySQL"],
+      links: { code: "https://github.com/dhananjaykadam1260-cell/Daily-Expense-Traker.git" },
+      icon: "💰",
+    },
+    {
+      title: "Online News Portal",
+      desc: "A dynamic news publishing website with category-based articles, an admin panel for content management, and a MySQL-backed database designed around a structured ER model.",
+      stack: ["PHP", "MySQL"],
+      links: { code: "https://github.com/dhananjaykadam1260-cell/Online-News-Portal-Website.git" },
+      icon: "📰",
     },
     {
       title: "Gym Management System",
@@ -79,11 +100,10 @@ function App() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
   const sections = useMemo(
-    () => ["hero", "about", "skills", "projects", "experience", "contact"],
+    () => ["hero", "skills", "projects", "experience", "contact"],
     []
   );
 
-  // ✅ Fixed: proper mailto with subject + body
   const mailtoHref = useMemo(() => {
     const subject = encodeURIComponent(`Portfolio Contact - ${DATA.name}`);
     const body = encodeURIComponent(
@@ -92,7 +112,6 @@ function App() {
     return `mailto:${DATA.email}?subject=${subject}&body=${body}`;
   }, []);
 
-  // ✅ WhatsApp link with pre-filled message
   const whatsappHref = useMemo(() => {
     const message = encodeURIComponent(
       `Hi Dhananjay! 👋\n\nI visited your portfolio and I'd like to connect with you.\n\nLooking forward to hearing from you!`
@@ -160,17 +179,15 @@ function App() {
           </div>
 
           <div className="navbar-links">
-            {["about", "skills", "projects", "experience", "contact"].map(
-              (id) => (
-                <button
-                  key={id}
-                  className={`nav-link ${activeSection === id ? "active" : ""}`}
-                  onClick={() => scrollToSection(id)}
-                >
-                  {id}
-                </button>
-              )
-            )}
+            {["skills", "projects", "experience", "contact"].map((id) => (
+              <button
+                key={id}
+                className={`nav-link ${activeSection === id ? "active" : ""}`}
+                onClick={() => scrollToSection(id)}
+              >
+                {id}
+              </button>
+            ))}
           </div>
 
           <a
@@ -188,16 +205,13 @@ function App() {
       <section id="hero" className="hero">
         <div className="hero-bg">
           <div className="hero-grid-pattern" />
-          <div className="hero-gradient-orb orb-1" />
-          <div className="hero-gradient-orb orb-2" />
-          <div className="hero-gradient-orb orb-3" />
         </div>
 
         <div className="container hero-container">
           <div className="hero-content">
             <div className="hero-tag">
               <span className="pulse-dot" />
-              Available for opportunities
+              STATUS: AVAILABLE FOR OPPORTUNITIES
             </div>
 
             <h1 className="hero-title">
@@ -256,13 +270,14 @@ function App() {
           <div className="hero-visual">
             <div className="code-window">
               <div className="window-header">
+                <div className="window-tag">SYSTEM ARCHITECTURE</div>
                 <div className="window-dots">
                   <span />
                   <span />
                   <span />
                 </div>
-                <div className="window-title">backend-api.java</div>
               </div>
+              <div className="window-title">backend-api.java</div>
 
               <div className="window-content">
                 <pre>
@@ -309,55 +324,11 @@ function App() {
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="section">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-label">About Me</div>
-            <h2 className="section-title">Building Robust Backend Systems</h2>
-          </div>
-
-          <div className="about-grid">
-            <div className="about-card">
-              <div className="card-number">01</div>
-              <h3>Who I Am</h3>
-              <p>
-                Java Backend Developer experienced in building scalable
-                applications using Spring Boot, REST APIs, and MySQL. I combine
-                backend development with DevOps practices like Docker, Linux,
-                and CI/CD.
-              </p>
-            </div>
-
-            <div className="about-card">
-              <div className="card-number">02</div>
-              <h3>What I Do</h3>
-              <ul className="feature-list">
-                <li>Design scalable REST APIs with Spring Boot</li>
-                <li>Implement full-stack features for complex platforms</li>
-                <li>Containerize applications using Docker</li>
-                <li>Explore AWS and cloud-native DevOps</li>
-              </ul>
-            </div>
-
-            <div className="about-card">
-              <div className="card-number">03</div>
-              <h3>My Approach</h3>
-              <p>
-                I focus on clean architecture, input validation, centralized
-                error handling, and optimized database operations. Always
-                learning, always improving.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Skills */}
       <section id="skills" className="section section-dark">
         <div className="container">
           <div className="section-header">
-            <div className="section-label">Tech Stack</div>
+            
             <h2 className="section-title">Technologies I Work With</h2>
           </div>
 
@@ -392,7 +363,7 @@ function App() {
       <section id="projects" className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-label">Portfolio</div>
+            
             <h2 className="section-title">Featured Projects</h2>
           </div>
 
@@ -446,7 +417,7 @@ function App() {
       <section id="experience" className="section section-dark">
         <div className="container">
           <div className="section-header">
-            <div className="section-label">Journey</div>
+            
             <h2 className="section-title">Work Experience</h2>
           </div>
 
@@ -480,7 +451,7 @@ function App() {
         <div className="container">
           <div className="contact-container">
             <div className="contact-content">
-              <div className="section-label">Get In Touch</div>
+              <div className="section-label">GET IN TOUCH</div>
               <h2 className="section-title">Let's Work Together</h2>
               <p className="contact-description">
                 I'm always open to discussing new projects, creative ideas, or
@@ -488,7 +459,6 @@ function App() {
               </p>
 
               <div className="contact-methods">
-                {/* ✅ Fixed: mailto opens default mail client */}
                 <a href={`mailto:${DATA.email}`} className="contact-method">
                   <div className="method-icon">📧</div>
                   <div className="method-content">
@@ -497,7 +467,6 @@ function App() {
                   </div>
                 </a>
 
-                {/* ✅ Fixed: phoneRaw used for tel: link, no dashes */}
                 <a href={`tel:${DATA.phoneRaw}`} className="contact-method">
                   <div className="method-icon">📱</div>
                   <div className="method-content">
@@ -537,7 +506,6 @@ function App() {
             {/* Right side card */}
             <div className="contact-visual">
               <div className="contact-card">
-                <div className="card-glow" />
                 <div className="card-inner">
                   <div className="contact-avatar">DK</div>
                   <h4>{DATA.name}</h4>
@@ -555,7 +523,6 @@ function App() {
                     {DATA.location}
                   </div>
 
-                  {/* ✅ WhatsApp Send Message */}
                   <a
                     className="btn btn-whatsapp btn-full"
                     href={whatsappHref}
