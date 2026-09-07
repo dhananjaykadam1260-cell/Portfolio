@@ -6,8 +6,8 @@ import "./App.css";
  */
 const DATA = {
   name: "Dhananjay Kadam",
-  role: "Java Backend Developer",
-  specialties: ["Java", "Spring Boot", "AWS", "DevOps"],
+  role: "Java Full Stack Developer",
+  specialties: ["Java", "Spring Boot", "React", "DevOps"],
   location: "Pune, India",
   email: "dhananjaykadam1260@gmail.com",
   phone: "+91-8767348231",       // display format
@@ -18,14 +18,14 @@ const DATA = {
     "https://drive.google.com/file/d/12DN1oLJQ2EdFB6y1-g7-5kt4uvkarVYt/view?usp=sharing",
 
   summary:
-    "Java Backend Developer experienced in building scalable applications using Spring Boot, REST APIs, and MySQL. I combine backend development with DevOps practices like Docker, Linux, and CI/CD, and I'm actively expanding my skills in AWS to create efficient, cloud-native solutions.",
+    "Java Full Stack Developer focused on building responsive web applications with Java, Spring Boot, REST APIs, MySQL, and React. I also work with Git, Linux, Docker, AWS EC2, Nginx, and CI/CD workflows, and I am currently strengthening my Kubernetes and cloud deployment skills.",
 
   skills: {
-    Backend: ["Java", "Spring Boot", "Spring MVC", "Hibernate", "REST APIs"],
+    Backend: ["Java", "Spring Boot", "Spring MVC", "Hibernate", "JPA", "REST APIs"],
     Frontend: ["React", "Vite", "HTML", "CSS", "Bootstrap"],
     Database: ["MySQL", "PostgreSQL"],
-    DevOps: ["Git", "Docker", "CI/CD", "Linux", "Kubernetes"],
-    Tools: ["Postman", "VS Code", "IntelliJ", "Eclipse"],
+    DevOps: ["Linux", "Git", "Docker", "AWS EC2", "Nginx", "GitHub Actions", "CI/CD", "Kubernetes"],
+    Tools: ["Postman", "GitHub", "VS Code", "IntelliJ IDEA", "Eclipse"],
   },
 
   projects: [
@@ -60,7 +60,7 @@ const DATA = {
     {
       title: "Gym Management System",
       desc: "Built a Gym Management web application using JSP, Servlets, JDBC, and MySQL implementing member registration, plan management, fee tracking, attendance records, and admin dashboard. Applied MVC architecture, form validation, session management, and CRUD operations with efficient database integration.",
-      stack: ["Spring Boot", "Thymeleaf", "MySQL"],
+      stack: ["JSP", "Servlets", "JDBC", "MySQL"],
       links: { code: "https://github.com/dhananjaykadam1260-cell" },
       icon: "💪",
     },
@@ -76,20 +76,20 @@ const DATA = {
   experience: [
     {
       company: "Project / Internship Experience",
-      role: "Java Backend Developer",
-      period: "2025 — 2026",
+      role: "Java Full Stack Developer",
+      period: "2025 — Present",
       points: [
-        "Designed and implemented scalable REST APIs using Spring Boot following clean architecture principles.",
-        "Enhanced backend reliability by implementing centralized exception handling and request validation.",
-        "Built database-driven modules using MySQL, JPA, and Hibernate with optimized CRUD operations.",
-        "Dockerized applications and explored CI/CD practices for automated build and deployment pipelines.",
+        "Built full-stack web applications using Java, Spring Boot, REST APIs, React, and MySQL.",
+        "Implemented layered backend architecture with validation, exception handling, JPA, and Hibernate-based persistence.",
+        "Tested REST APIs using Postman and worked with Git/GitHub for source control and collaboration.",
+        "Practiced Docker-based deployments and CI/CD workflows using GitHub Actions, AWS EC2, Linux, and Nginx.",
       ],
     },
   ],
 
   stats: [
-    { label: "Projects", value: "4+" },
-    { label: "Technologies", value: "10+" },
+    { label: "Projects", value: "6+" },
+    { label: "Technologies", value: "20+" },
     { label: "Experience", value: "1+ Years" },
   ],
 };
@@ -116,7 +116,8 @@ function App() {
     const message = encodeURIComponent(
       `Hi Dhananjay! 👋\n\nI visited your portfolio and I'd like to connect with you.\n\nLooking forward to hearing from you!`
     );
-    return `https://wa.me/918767348231?text=${message}`;
+    const whatsappNumber = DATA.phoneRaw.replace(/\D/g, "");
+    return `https://wa.me/${whatsappNumber}?text=${message}`;
   }, []);
 
   const scrollToSection = (id) => {
@@ -459,7 +460,7 @@ function App() {
               </p>
 
               <div className="contact-methods">
-                <a href={`mailto:${DATA.email}`} className="contact-method">
+                <a href={mailtoHref} className="contact-method">
                   <div className="method-icon">📧</div>
                   <div className="method-content">
                     <div className="method-label">Email</div>
@@ -550,7 +551,7 @@ function App() {
                 <div className="brand-icon">DK</div>
                 <span>{DATA.name}</span>
               </div>
-              <p>Building scalable backend solutions with modern technologies.</p>
+              <p>Building full-stack Java applications with modern DevOps practices.</p>
             </div>
 
             <div className="footer-right">

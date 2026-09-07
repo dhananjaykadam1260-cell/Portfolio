@@ -1028,7 +1028,18 @@ h1, h2, h3, h4 {
 @media (max-width: 640px) {
   .container { padding: 0 1.5rem; }
 
-  .navbar-links { gap: 1rem; font-size: 0.85rem; }
+  .navbar-links {
+    gap: 1rem;
+    font-size: 0.85rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .navbar-links::-webkit-scrollbar { display: none; }
+
+  .nav-link { white-space: nowrap; }
 
   .hero-stats { gap: 2rem; }
 
